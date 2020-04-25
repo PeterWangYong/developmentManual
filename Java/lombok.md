@@ -21,13 +21,13 @@ Lombok帮助开发者自动生成getter,setter,toString等样板代码
 
 安装插件让IDEA可以识别Lombok注解，防止检查报错。
 
-![image-20200424110019381](/Users/wangyong/Library/Application Support/typora-user-images/image-20200424110019381.png)
+![](https://img2020.cnblogs.com/blog/1192583/202004/1192583-20200424143800245-1594379082.png)
 
 ## 常用注解
 
 IDEA插件下面列出了几乎全部的注解
 
-![image-20200424110405883](/Users/wangyong/Library/Application Support/typora-user-images/image-20200424110405883.png)
+![](https://img2020.cnblogs.com/blog/1192583/202004/1192583-20200424143825930-434509947.png)
 
 ### @Getter @Setter
 
