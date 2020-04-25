@@ -111,6 +111,18 @@ public class Basic2 {
 }
 ```
 
+> 如果已经存在构造器则@Data中的@RequiredArgsConstructor不生效（只能单独打上注解）
+
+```java
+@Data
+@NoArgsConstructor(force = true)
+@RequiredArgsConstructor
+public class Basic {
+  private final int id;
+  private final String name;
+}
+```
+
 
 
 ### @Slf4j
