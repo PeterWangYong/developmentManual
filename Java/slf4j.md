@@ -20,13 +20,6 @@ logback是一款高性能的日志框架，slf4j+logback是一个常用组合。
       <artifactId>logback-classic</artifactId>
       <version>1.2.3</version>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-core</artifactId>
-      <version>1.2.3</version>
-    </dependency>
 ```
 
 ## 基础使用
