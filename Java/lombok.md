@@ -1,0 +1,135 @@
+## 介绍
+
+Lombok帮助开发者自动生成getter,setter,toString等样板代码
+
+
+
+## 配置依赖
+
+```xml
+    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.12</version>
+      <!-- 只用于编译，不进行打包 -->
+      <scope>provided</scope>
+    </dependency>
+```
+
+## IDEA插件
+
+安装插件让IDEA可以识别Lombok注解，防止检查报错。
+
+![image-20200424110019381](/Users/wangyong/Library/Application Support/typora-user-images/image-20200424110019381.png)
+
+## 常用注解
+
+IDEA插件下面列出了几乎全部的注解
+
+![image-20200424110405883](/Users/wangyong/Library/Application Support/typora-user-images/image-20200424110405883.png)
+
+### @Getter @Setter
+
+创建getter和setter方法。
+
+```java
+@Getter @Setter
+public class Basic3 {
+  private int id;
+  private String name;
+
+  public static void main(String[] args) {
+    Basic3 basic3 = new Basic3();
+    basic3.setId(1);
+    basic3.setName("Diana");
+    System.out.println(basic3.getId());
+    System.out.println(basic3.getName());
+  }
+}
+```
+
+### @ToString
+
+创建toString方法，同时可以指定包括和不包括哪些字段。
+
+```java
+@ToString
+public class Basic5 {
+  private int id;
+  private String name;
+  @ToString.Exclude private int age;
+
+  public static void main(String[] args) {
+    Basic5 basic5 = new Basic5();
+    System.out.println(basic5);
+  }
+}
+```
+
+
+
+### @RequiredArgsConstructor
+
+创建带参构造，参数包括所有未初始化的final成员和@NonNull修饰的成员。
+
+```java
+@RequiredArgsConstructor
+public class Basic6 {
+  private final int id;
+  @NonNull private String name;
+  private int age;
+
+  public static void main(String[] args) {
+    Basic6 basic6 = new Basic6(1, "Diana");
+  }
+
+}
+```
+
+
+
+### @Data
+
+复合注解：包括@Getter、@Setter、@ToString、@RequiredArgsConstructor和@EqualsAndHashCode
+
+```java
+@Data
+public class Basic2 {
+  private final int id;
+  private final String name;
+  @NonNull private int age;
+  private String role;
+
+  public static void main(String[] args) {
+    Basic2 basic2 = new Basic2(1, "Diana", 18);
+    basic2.setRole("admin");
+    System.out.println(basic2.getId());
+    System.out.println(basic2.getName());
+    System.out.println(basic2);
+  }
+}
+```
+
+
+
+### @Slf4j
+
+自动创建一个Slf4J Logger对象，名称为当前类名。
+
+```java
+// Create
+private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(LogExample.class);
+```
+
+```java
+@Slf4j
+public class Basic4 {
+  public static void main(String[] args) {
+    log.info("hello {}", "info");
+  }
+}
+```
+
+
+
