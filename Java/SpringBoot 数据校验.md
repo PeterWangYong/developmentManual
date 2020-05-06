@@ -344,7 +344,7 @@ public class UserController {
 
 我们可以使用```@ControllerAdvice```和```@ExceptionHandler```捕获和处理特定的Controller异常并进行结构化返回。
 
-具体内容见我的另一篇文章：”SpringBoot 统一异常处理”。
+具体内容见我的另一篇文章：”SpringBoot 全局异常处理”。
 
 
 
