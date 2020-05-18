@@ -937,5 +937,4 @@ set标签用于update语句，其作用和where类似，set标签是为了解决
 
 Mybatis作为一个半自动ORM框架，相比于JDBC而言能够减少代码量，分离出SQL到配置文件统一管理，提供ORM映射等，但使用过程中仍然能够感受到Mybatis和SQL语句之间的紧密联系，所以使用起来需要有较好的SQL功底，同时由于其对于一些简单的CRUD操作仍然需要编写SQL语句，使用起来还是不免有些繁琐。
 
-
-
+> 源代码: https://github.com/PeterWangYong/blog-code/tree/master/iimybatis
