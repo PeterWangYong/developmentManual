@@ -21,12 +21,7 @@ MyBatis是一个实现了数据持久化的开源框架，简单理解就是对J
 
 #### Mybatis的核心接口和类
 
-```flow
-builder=>operation: SqlSessionFactoryBuilder
-factory=>operation: SqlSessionFactory
-session=>operation: SqlSession
-builder->factory->session
-```
+![](https://img2020.cnblogs.com/blog/1192583/202005/1192583-20200518193241918-489526615.png)
 
 ### 依赖配置
 
