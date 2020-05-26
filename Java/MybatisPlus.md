@@ -125,11 +125,11 @@ public class MybatisPlusApplication {
    }
    ```
 
-## 继承BaseMapper<>类
+## 继承BaseMapper类
 
 如果不想自己编写SQL语句，可以继承BaseMapper中预定义的方法实现CRUD操作。
 
-我们通过使用各种**实体类注解**来告诉MP如何生成SQL语句实现数据库操作。
+MP将根据我们所使用的 **实体类注解** 和 **CRUD方法** 动态生成SQL语句然后通过Mybatis执行。
 
 ```java
 @Component
