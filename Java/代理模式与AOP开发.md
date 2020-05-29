@@ -480,46 +480,6 @@ public class UserServiceImpl implements UserService {
 
 我们通过在原始对象中注入并调用代理对象的方式实现对代理方法的调用。
 
-> 下面的说法是我猜的：
->
-> 在Spring的生命周期中，第一步创建对象newInstance()完成后就会将bean加入容器，所以上述做法实际上是注入自己本身，但在BeanPostProcessor加工完成后，userService指向的内存地址的内容已经被替换成了新的代理对象。
->
-> 我们尝试在初始化方法和login方法中打印对象的地址：
->
-> ```java
-> @Service
-> public class UserServiceImpl implements UserService , InitializingBean {
-> 
->   @Autowired
->   private UserService userService;
-> 
->   @Override
->   @Tx
->   public void login(String username, String password) {
->     System.out.println("login succeed !");
-> //    this.register(new User());
->     this.userService.register(new User());
->     // 打印地址
->     System.out.println(this.userService);
->   }
-> 
-> 
->   @Override
->   public void register(User user) {
->     System.out.println("register succeed !");
->   }
-> 
->   @Override
->   public void afterPropertiesSet() throws Exception {
->     // 打印地址
->     System.out.println(this.userService);
->   }
-> 
-> }
-> ```
->
-> 结果两个地址都是com.peter.aop.service.impl.UserServiceImpl@64f555e7，所以我觉得应该是代理对象在原始对象的地址上直接替换了内容。
-
 ### 第五章 总结
 
 AOP简单说就是通过代理类为原始类添加额外功能，好处是便于原始类的维护。
